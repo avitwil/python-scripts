@@ -8,8 +8,9 @@ def sort_input(x):
             z2 = z2 + i
             z1 = z1 + ":"
         else:
+            clear_screen()
             print("invalid input")
-            sort_input()
+            run_calculator()
     y = z1.split(":")
     z = 0
     w =[]
@@ -18,8 +19,6 @@ def sort_input(x):
         z = z + 1
     w.append(int(y[-1]))
     return w
-    
-    
 def calculate(x):
     while not x.count("/") == 0 or not x.count("*") == 0:
         yd = 0
@@ -60,27 +59,46 @@ def calculate(x):
         x.pop(y1)
         x.insert(y1, z)
     return x[0]
-    
-    
 def check_input(n):
     if n[1:].isdigit() is False:
-    print("invalid input --- exiting")
-    exit()
+        clear_screen()
+        print("invalid input ")
+        run_calculator()
+
     y = 0
     for i in n:
         y1 = y - 1
         y2 = y + 1
+
         if i.isdigit() is False:
             if y == 0 or n[y1].isdigit() is False or n[y2].isdigit() is False or not(i == "+" or i == "-" or i == "*" or i == "/"):
-                print("invalid input --- exiting")
-                exit()
+                clear_screen()
+                print("invalid input ")
+                run_calculator()
         y = y + 1
 
+def run_calculator():
+    l = input("enter your calculation: ")
+    check_input(l)
+    x1 = sort_input(l)
+    x2 = calculate(x1)
+    print(l + " = " + str(x2))
+    yn = input('press Enter to restart or type "e" to exit ')
+    if yn == "e":
+        exit()
+    else:
+        clear_screen()
+        run_calculator()
 
-l = input("enter your calculation \n")
-check_input(l)
-x1 = sort_input(l)
-x2 = calculate(x1)
-print(l + " = " + str(x2))
+def clear_screen(): #cleaning the screen in the terminal for a streamline look
+    import os
+    # Windows
+    if os.name == 'nt':
+        os.system('cls')
+    # Other systems (Linux, macOS)
+    else:
+        os.system('clear')
+        
+run_calculator()
 
 
