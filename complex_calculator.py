@@ -84,8 +84,4 @@ x1 = sort_input(l)
 x2 = calculate(x1)
 print(l + " = " + str(x2))
 
-l = input("enter your calculation \n")
-x1 = sort_input(l)
-x2 = calculate(x1)
-print(l + " = " + str(x2))
 
