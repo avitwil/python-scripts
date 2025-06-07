@@ -9,7 +9,7 @@ def sort_input(x):
             z1 = z1 + ":"
         else:
             clear_screen()
-            print("invalid input")
+            print("invalid input ")
             run_calculator()
     y = z1.split(":")
     z = 0
@@ -60,7 +60,7 @@ def calculate(x):
         x.insert(y1, z)
     return x[0]
 def check_input(n):
-    if n[1:].isdigit() is False:
+    if n[-1].isdigit() is False:
         clear_screen()
         print("invalid input ")
         run_calculator()
@@ -98,7 +98,6 @@ def clear_screen(): #cleaning the screen in the terminal for a streamline look
     # Other systems (Linux, macOS)
     else:
         os.system('clear')
-        
-run_calculator()
 
+run_calculator()
 
