@@ -18,6 +18,8 @@ def sort_input(x):
         z = z + 1
     w.append(int(y[-1]))
     return w
+    
+    
 def calculate(x):
     while not x.count("/") == 0 or not x.count("*") == 0:
         yd = 0
@@ -57,12 +59,9 @@ def calculate(x):
         x.pop(y1)
         x.pop(y1)
         x.insert(y1, z)
-
-
-
-
-
     return x[0]
+    
+    
 def check_input(n):
     if n[1:].isdigit() is False:
     print("invalid input --- exiting")
