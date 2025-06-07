@@ -80,6 +80,7 @@ def continue_calculator(num1):
                 for i in history:
                     print(i)
                 print("----------")
+                print('continue calculating or type "c" to clear , type "h" for history , type "e" to exit')
                 continue_calculator(num1)
             else:
                 print("please enter a valid calculation")
