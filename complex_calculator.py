@@ -63,6 +63,25 @@ def calculate(x):
 
 
     return x[0]
+def check_input(n):
+
+    y = 0
+    for i in n:
+        y1 = y - 1
+        y2 = y + 1
+        if i.isdigit() is False:
+            if y == 0 or n[y1].isdigit() is False or n[y2].isdigit() is False or not(i == "+" or i == "-" or i == "*" or i == "/"):
+                print("invalid input --- exiting")
+                exit()
+        y = y + 1
+
+
+l = input("enter your calculation \n")
+check_input(l)
+x1 = sort_input(l)
+x2 = calculate(x1)
+print(l + " = " + str(x2))
+
 l = input("enter your calculation \n")
 x1 = sort_input(l)
 x2 = calculate(x1)
