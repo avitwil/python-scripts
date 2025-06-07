@@ -64,7 +64,9 @@ def calculate(x):
 
     return x[0]
 def check_input(n):
-
+    if n[1:].isdigit() is False:
+    print("invalid input --- exiting")
+    exit()
     y = 0
     for i in n:
         y1 = y - 1
